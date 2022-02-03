@@ -1,0 +1,13 @@
+package collections;
+
+public abstract class Parent {
+	
+	public void run() {
+		
+	}
+	
+	public void walk() {
+		
+	}
+
+}

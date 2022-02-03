@@ -1,0 +1,26 @@
+package mainApp;
+
+public class TestPolymorphism {  
+	public static void main(String args[]){  
+		Bank b;  
+		b=new SBI(); 
+		b.getRateOfInterest();
+		b=new ICICI();  
+		b=new AXIS();  
+		}  
+}
+
+class  Bank{  
+void getRateOfInterest(){System.out.println("Bank");}  
+}  
+class SBI extends Bank{  
+	void getRateOfInterest(){System.out.println("SBI");}  
+	
+}  
+class ICICI extends Bank{  
+	void getRateOfInterest(){System.out.println("ICICI");}  
+}  
+class AXIS extends Bank{  
+	void getRateOfInterest(){System.out.println("AXIS");}  
+}  
+

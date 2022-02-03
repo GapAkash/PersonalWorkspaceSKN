@@ -1,0 +1,19 @@
+package level1;
+
+public class test {
+	
+	public static void main(String[] args) {
+		int a[] = {1};
+		int b[] = {1};
+		
+		if(a == b)
+			System.out.println(""same"");
+		else
+			System.out.println("not same");
+		
+//		int x = 20;
+//		String sup = (x<15)?""
+		
+	}
+
+}

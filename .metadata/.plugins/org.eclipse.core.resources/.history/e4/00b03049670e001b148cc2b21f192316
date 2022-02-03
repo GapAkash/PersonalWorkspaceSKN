@@ -1,0 +1,35 @@
+package com.burberry.mnt.mainApp;
+
+import java.io.File;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.Scanner;
+
+import com.burberry.mnt.util.UtilConstants;
+
+public class MainApp {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		welcomeMsg();
+		getLastMntProcessedDate();
+	}
+
+	private static void getLastMntProcessedDate() {
+		System.out.println("Finding the last modified NAME and DATE of folder inside "+UtilConstants.XSTORE_ARCHIVE_DIR);
+		
+		File folder = new File(UtilConstants.XSTORE_ARCHIVE_DIR);
+		File[] files = folder.listFiles();
+		
+//		Arrays.sort(files, Comparator.comparingLong(File::lastModified).reversed());
+		
+		System.out.println(files[0].getName());
+		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+		System.out.println(sdf.format(files[0].lastModified()));
+	}
+
+	private static void welcomeMsg() {
+		
+	}
+}

@@ -1,0 +1,17 @@
+package collections;
+
+public class Child extends Parent {
+	
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub
+		super.run();
+	}
+	
+	@Override
+	public void walk() {
+		// TODO Auto-generated method stub
+		super.walk();
+	}
+
+}

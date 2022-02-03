@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename package &apos;com.webscrap.mainAp&apos; to &apos;com.webscrap.mainApp&apos;&#x0D;&#x0A;- Original project: &apos;TestWebScrap&apos;&#x0D;&#x0A;- Original element: &apos;TestWebScrap/src/com.webscrap.mainAp&apos;&#x0D;&#x0A;- Renamed element: &apos;TestWebScrap/src/com.webscrap.mainApp&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename package &apos;com.webscrap.mainAp&apos;" flags="589830" hierarchical="false" id="org.eclipse.jdt.ui.rename.package" input="/src&lt;com.webscrap.mainAp" name="com.webscrap.mainApp" qualified="false" references="true" stamp="1600621431977" textual="false" version="1.0"/>
+</session>

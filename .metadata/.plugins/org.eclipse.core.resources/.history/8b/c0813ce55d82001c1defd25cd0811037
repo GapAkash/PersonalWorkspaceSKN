@@ -1,0 +1,22 @@
+package collections;
+
+public class A {
+
+	public static void main(String[] args) {
+		int arr[] = {9,4,3,1};
+		System.out.println("Maximum difference is " + maxDiff(arr));
+	}
+
+	public static int maxDiff(int[] nums) {
+		int ans = nums[1] - nums[0];
+
+		for (int i = 0; i < nums.length; i++) {
+			for (int j = i + 1; j < nums.length; j++) {
+				if (nums[j] - nums[i] > ans)
+					ans = nums[j] - nums[i];
+			}
+		}
+		return ans;
+	}
+
+}

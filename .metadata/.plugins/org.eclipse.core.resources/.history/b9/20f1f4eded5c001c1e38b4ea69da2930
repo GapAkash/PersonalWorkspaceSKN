@@ -1,0 +1,31 @@
+package practice;
+
+
+
+/* 1 */ class Animal {
+/* 2 */ public static void foo(){
+/* 3 */ System.out.print("Animal");
+/* 4 */ }
+/* 5 */ }
+/* 6 */
+/* 7 */ class Cat extends Animal {
+/* 8 */ public static void foo() {
+/* 9 */ System.out.print("Cat");
+/* 10 */ }
+/* 11 */ }
+/* 12 */
+/* 13 */ public class Div {
+/* 14 */
+/* 15 */ public static void main(String args[]){
+/* 16 */
+/* 17 */ Animal a = new Animal();
+/* 18 */ Animal b = new Cat();
+/* 19 */ Cat c = new Cat();
+/* 20 */ Animal d = null;
+/* 21 */
+/* 22 */ a.foo();
+/* 23 */ b.foo();
+/* 24 */ c.foo();
+/* 25 */ d.foo();
+/* 26 */ }
+/* 27 */ }

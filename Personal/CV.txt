@@ -1,0 +1,43 @@
+Worked as a part of Disney Team of the company on the oracle retail products wherein we customized the software according to the requirements of the client Disney using Java technology. I and my team used to analyze the requirements , design the solutions, customize the software according to the requirements, did the testing on the testing dev monitors after the development and deployed the patches after the successful testing. We also used to maintain the software and troubleshoot the problems of the software and provide the whole report about the causes and the solution of the problem to the Client. The Technologies Java ,Spring , Javascript, SQL, XML technologies.
+
+Project:: NBTY- Oracle Retail POS(1 Year 11 Months Exp)
+
+Development and Solution::
+1.Responsible for solutions and deployment of Oracle Retail POS with the one of the largest number of stores in Europe and United Kingdom.
+2.Client Services on Point of Sale, Professional Services with defects and Production Development.
+3.Mentored Junior developers: assisted with code reviews, conducted technology discussions groups and presentations, act as resource for them.
+
+
+• Technical/Business Systems analyst having 11+ years of overall IT experience with experience of major retail supply chain solutions and payment systems like SAP POS, Oracle XStore POS, GK Transaction plus, GK POS , & Micros Sales Audit system for Enhancement, Production Support, Business Analysis, Installation and Deployment activities.
+• Currently working as a Business Systems Analyst for a major variety brand retailer, helping functionality changes around payment processing and transitioning to Oracle E-commerce Omni channel solution.
+• Experienced in collaboration with major third party payment and loyalty providers like FirstData, Incomm, Inmar, for core payment processing implementation and troubleshooting.
+• Scaled Agile certified professional with proficiency in Business Requirement elicitation, feasibility analysis, impact analysis ,UML modelling and Conducting Joint application design (JAD) sessions with business stakeholders to create the most efficient and profitable solution.
+• Expertise in working with multiple technologies like Java(OCAJP Certified), SQL, Oracle and scripting languages
+• Worked as a production support analyst/lead to troubleshoot core POS issues in a multi-geography/multi -vendor environment under strict SLA compliance.
+• Experienced Quality engineer in Investment Banking and payment card industry with leading card brands and multinational banks.
+
+Accomplishments
+• Helped client developing and implementing the latest payment compliances and most profitable payment solutions such as EMV, Store and Forward, Quick chip.
+• Reduced complexity and accelerated functional designing of the E-Commerce Omni Channel integration utilizing detailed understanding of interface systems.
+• Successful implementation and enhancement of POS vanilla version ensured business continuity and cost effectiveness.
+• Developed strong client relationship to expand the scope of work and achieve new opportunities in other functional areas.
+
+Horizontal of work (Domain): Retail
+Vertical of work: PCI integration, Order Management, Inventory Management, Deployment
+• Good understanding of Micros/Oracle X-Store POS customization and support experience.
+• Responsible for mapping the business requirements to systems/technical requirements.
+• Responsible for implementing PCI compliance Payment Integration with various Xstore projects.
+• Experienced in defining solutions around Micros/Oracle and preparing technical documents for the team as required
+
+Horizontal of work (Domain): Retail
+Vertical of work: PCI integration, Order Management, Inventory Management, Deployment
+• Developing and participating in various POCs for product customization.
+• Participating in build deployment and production performance issues.
+• Responsible for mapping the business requirements to systems/technical requirements.
+• Responsible for implementing PCI compliance Payment Integration with various Xstore projects.
+• Experienced in defining solutions around Micros/Oracle and preparing technical documents for the team as required
+
+• Good understanding of Micros/Oracle X-Store POS customization and support experience.
+• Responsible for mapping the business requirements to systems/technical requirements.
+• Developing and participating in various POCs for product customization.
+• Participating in build deployment and production performance issues.

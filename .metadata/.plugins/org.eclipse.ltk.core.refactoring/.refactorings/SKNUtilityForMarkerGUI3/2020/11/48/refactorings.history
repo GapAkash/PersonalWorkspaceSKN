@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename local variable &apos;howTo&apos; in &apos;com.skillnetinc.marker.utility.InputUtility.buttonActivity(...)&apos; to &apos;howToUse&apos;&#x0D;&#x0A;- Original project: &apos;SKNUtilityForMarkerGUI3&apos;&#x0D;&#x0A;- Original element: &apos;com.skillnetinc.marker.utility.InputUtility.buttonActivity(JFrame).howTo&apos;&#x0D;&#x0A;- Renamed element: &apos;howTo&apos;&#x0D;&#x0A;- Update references to refactored element" description="Rename local variable &apos;howTo&apos;" id="org.eclipse.jdt.ui.rename.local.variable" input="/src&lt;com.skillnetinc.marker.utility{InputUtility.java[InputUtility~buttonActivity~QJFrame;@howTo!1846!1887!1854!1858!QJButton;!0!false" name="howToUse" references="true" stamp="1606126460893" version="1.0"/>
+</session>

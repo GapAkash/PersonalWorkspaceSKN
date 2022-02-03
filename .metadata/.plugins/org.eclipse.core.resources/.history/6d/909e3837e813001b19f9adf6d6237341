@@ -1,0 +1,38 @@
+package com.skillnet.marker.mainApp;
+
+import java.io.File;
+import java.util.Scanner;
+
+public class MainApp {
+	public static void main(String[] args) {
+		System.out.println("Please Copy Paste All The Markers : ");
+		Scanner sc = new Scanner(System.in);
+//		StringBuilder restoreMarkers = new StringBuilder();
+		
+		while (sc.hasNextLine()) {
+			String posName = sc.nextLine().substring(0,11);
+//			String markerLine = sc.nextLine();
+			
+			File file = new File("\\\\"+posName+"\\C$\\environment\\marker");
+			File[] files = file.listFiles();
+			
+			if (!(files.length==0)) {
+				System.out.println("Found Total "+files.length+" markers inside "+file);
+				for (int i = 0; i < files.length; i++) {
+					System.out.println("Deleting "+files[i].getName()+" at "+posName);
+					files[i].delete();
+				}
+			}
+			System.out.println("Checking if markers are cleared at "+posName);
+			files = file.listFiles();
+			System.out.println("Total markers = "+files.length);
+			
+//			if ((markerLine!=null) && (markerLine.contains("restore-xstore-db.err") || markerLine.contains("restore-training-db.err"))) {
+//				restoreMarkers.append(markerLine);
+//			}
+//			System.out.println("Please Take Care Of "+restoreMarkers);
+		}
+		
+		sc.close();
+	}
+}

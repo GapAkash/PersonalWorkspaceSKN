@@ -1,0 +1,215 @@
+package com.skillnetinc.ops;
+
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.Locale;
+import java.util.Properties;
+
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
+
+import com.skillnetinc.dao.CommonDetails;
+import com.skillnetinc.utility.Constants;
+import com.skillnetinc.utility.InputUtility;
+
+public class OpsUtility {
+
+	private static Properties properties;
+
+
+	public static void readPropertiesFile() {
+		if (properties == null) {
+
+			FileReader fr;
+			properties = new Properties();
+
+			try {
+				fr = new FileReader("Details.properties");
+				properties.load(fr);
+			} catch (IOException e) {
+				System.out.println("Error while reading properties file.");
+				e.printStackTrace();
+			}
+		}
+	}
+
+	public static CommonDetails getCommonDetails() {
+
+		readPropertiesFile();
+		CommonDetails commonDetails = new CommonDetails();
+		commonDetails.setAnalystName(properties.getProperty(Constants.ANALYST_NAME));
+		commonDetails.setPriority(properties.getProperty(Constants.PRIORITY));
+		commonDetails.setAssignedBy(properties.getProperty(Constants.ASSIGNED_BY));
+		commonDetails.setIssueType(properties.getProperty(Constants.ISSUE_TYPE));
+		return commonDetails;
+	}
+
+	public static JScrollPane getSheetOne() {
+		String column[] = { "INCIDENT#", "ASSIGNED TO", "ASSIGNED DATE", "TEAM UPDATE", "RESOLUTION", "RESOLUTION DATE",
+				"COMMENTS", "MONTH", "PRIORITY#", "REGION", "COUNTRY", "STORE#", "ASSIGNED BY", "ISSUE TYPE",
+				"ISSUE SUB-TYPE", "DESCRIPTION" };
+		String row[][] = {};
+		DefaultTableModel listTableModel = new DefaultTableModel(row, column);
+		
+		String marker[] = InputUtility.markerDesc.getText().split("\n");
+
+
+		for (int i = 0; i < marker.length; i++) {
+			
+		}
+		
+		
+		JTable jt = new JTable(listTableModel);
+		JScrollPane sp = new JScrollPane(jt);
+		return sp;
+	}
+
+	public static JScrollPane getSheetTwo() {
+		String column[] = { "INCIDENT#", "REGION", "COUNTRY", "STORE#", "TILL#", "DATE", "ISSUE TYPE", "ISSUE SUB-TYPE",
+				"DESCRIPTION" };
+		String row[][] = {};
+		DefaultTableModel listTableModel = new DefaultTableModel(row, column);
+		
+		String marker[] = InputUtility.markerDesc.getText().split("\n");
+
+
+		for (int i = 0; i < marker.length; i++) {
+			if (!marker[i].contains("appears to be offline")) {
+
+				getRegion(marker[i]);
+				getCountry(marker[i].substring(0, 2));
+				getSubIssueType(marker[i]);
+
+				listTableModel.addRow(new Object[] { InputUtility.incidentNum.getText(), getRegion(marker[i]),
+						getCountry(marker[i].substring(0, 2)), marker[i].substring(3, 7), marker[i].substring(8, 12),
+						Constants.CURRENT_DATE, getCommonDetails().getIssueType(), getSubIssueType(marker[i]),
+						marker[i] });
+			}
+		}
+		JTable jt = new JTable(listTableModel);
+		JScrollPane sp = new JScrollPane(jt);
+		return sp;
+
+	}
+
+//	public static JScrollPane getSheetThree() {
+//		String column[] = { "REGION", "COUNTRY", "STORE#", "REG#", "DATE", "ALERT" };
+//		
+//		String row[][] = { { Constants.ANALYST_NAME, Constants.CURRENT_DATE, InputUtility.markerDesc.getText(), "101", "Amit", "670000" }, { "102", "Jai", "780000", "101", "Amit", "670000" }, { "101", "Sachin", "700000", "101", "Amit", "670000" } };
+//		DefaultTableModel listTableModel = new DefaultTableModel(row, column);
+//		//JTable jt = new JTable(getSheetThreeRow(), column);
+//		JTable jt = new JTable(listTableModel);
+//		//getSheetThreeRow();
+//		JScrollPane sp = new JScrollPane(jt);
+//		
+//		return sp;
+//	}
+//
+//	private static Object[][] getSheetThreeRow() {
+//		Object[][] row = new Object[50][6];
+//		
+//		String marker [] = InputUtility.markerDesc.getText().split("\n");
+//		String emeiaCountries [] = {"ES", "DE", "CH", "BE", "AT", "IT", "UK", "RU", "AE", };
+//		String amerCountries [] = {"US", "CA", "MX"};
+//		String asiaCountries [] = {"CN", "MY", "TH", "JP", "SA", "KW", "BH", "QA", "HK", "SG", "AU", "KR", };
+//		String region = null;
+//		
+//		for (int i = 0; i < marker.length; i++) {
+//			Locale l = new Locale("", marker[i].substring(0, 2));
+//			//System.out.println(marker[i].substring(0, 2));
+//			//if(marker[i].contains("startup")){
+//			//System.out.println(marker[i].substring(3, 7));
+//			//System.out.println(marker[i].substring(8, 12));
+//			//if(marker[i].substring(0, 2).equalsIgnoreCase("US")) {
+////			System.out.println(marker[i].substring(0, 2)+"-"+l.getDisplayCountry().toUpperCase());
+//			for (int j = 0; j < emeiaCountries.length; j++) {
+//				if(marker[i].contains(asiaCountries[j])) {
+//					region = "EMEIA";
+//				}
+//			}
+//			
+//			for (int j = 0; j < asiaCountries.length; j++) {
+//				if(marker[i].contains(asiaCountries[j])) {
+//					region = "ASIA_PACIFIC";
+//				}
+//			}
+//			
+//			for (int j = 0; j < amerCountries.length; j++) {
+//				if(marker[i].contains(asiaCountries[j])) {
+//					region = "AMER";
+//				}
+//			}
+//			 row = new String [][]{{region, l.getDisplayCountry().toUpperCase(), marker[i].substring(3, 7), marker[i].substring(8, 12), Constants.CURRENT_DATE, marker[i] }};
+//			
+//		}
+//		return row;
+//	}
+
+	public static JScrollPane getSheetThree() {
+		String column[] = { "REGION", "COUNTRY", "STORE#", "TILL#", "DATE", "DESCRIPTION" };
+		String row[][] = {};
+		DefaultTableModel listTableModel = new DefaultTableModel(row, column);
+		
+		String marker[] = InputUtility.markerDesc.getText().split("\n");
+
+
+		for (int i = 0; i < marker.length; i++) {
+
+			getRegion(marker[i]);
+			getCountry(marker[i].substring(0, 2));
+
+			listTableModel.addRow(new Object[] { getRegion(marker[i]), getCountry(marker[i].substring(0, 2)),
+					marker[i].substring(3, 7), marker[i].substring(8, 12), Constants.CURRENT_DATE, marker[i] });
+		}
+		JTable jt = new JTable(listTableModel);
+		JScrollPane sp = new JScrollPane(jt);
+		return sp;
+
+	}
+	
+	
+	private static String getRegion(String desc) {
+		String emeiaCountries[] = { "UK", "AT", "BH", "BE", "CZ", "FR", "DE", "HU", "IT", "KW", "NL", "PT", "QA", "RU",
+				"SA", "ES", "CH", "AE" };
+		String amerCountries[] = { "US", "CA", "MX", "BR" };
+		String asiaCountries[] = { "AU", "JP", "MY", "SG", "KR", "TH", "HK", "CN", "MO" };
+		String region = null;
+		
+		for (int j = 0; j < asiaCountries.length; j++) {
+			for (int k = 0; k < amerCountries.length; k++) {
+				for (int l = 0; l < emeiaCountries.length; l++) {
+					if (desc.contains(asiaCountries[j])) {
+						region = "ASIA_PACIFIC";
+					} else if (desc.contains(amerCountries[k])) {
+						region = "AMER";
+					} else if (desc.contains(emeiaCountries[l])) {
+						region = "EMEIA";
+					}
+				}
+			}
+		}
+		return region;
+	}
+
+	private static String getCountry(String country) {
+		Locale locale = new Locale("", country);
+		return locale.getDisplayCountry().toUpperCase();
+	}
+
+	private static String getSubIssueType(String subIssueType) {
+		String issueSubType = null;
+
+		if (subIssueType.contains("startup.err") || subIssueType.contains("upload-pospolls.err")) {
+			issueSubType = "Start up error";
+		} else if (subIssueType.contains("get-remote-sql-server-backup.err")) {
+			issueSubType = "Download error";
+		} else if (subIssueType.contains("restore-xstore-db.err") || subIssueType.contains("unzipdbbackup.err")) {
+			issueSubType = "Database restore Error";
+		} else {
+			issueSubType = "Close error";
+		}
+		return issueSubType;
+	}
+
+}

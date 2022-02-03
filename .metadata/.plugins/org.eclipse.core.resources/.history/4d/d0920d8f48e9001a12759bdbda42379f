@@ -1,0 +1,96 @@
+package com.skillnetinc.utility;
+
+import java.awt.Color;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+
+import javax.swing.BorderFactory;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
+
+import com.skillnetinc.ops.OpsUtility;
+
+public class InputUtility {
+	
+	static JTextArea markerDesc;
+	static JTextField incidentNum, incidentDate, analystName;
+	static JLabel labelMarkerDesc, labelIncidentNum, labelIncidentDate, labelAnalystName;
+	
+	
+	public static void showUserInputFields(JFrame inputFrame) {
+//		userInput.getDate().setBounds(110, 15, 200, 30);
+//
+//		
+//		inputFrame.add(userInput.getDate());
+		labelMarkerDesc = new JLabel("<html>Marker<br>Description</html>");
+		labelMarkerDesc.setBounds(50, 115, 100, 30);
+		markerDesc = new JTextArea(10,20);
+		markerDesc.setBounds(150, 15, 200, 230);
+		markerDesc.setBorder(BorderFactory.createLineBorder(Color.gray));
+
+		//scroll.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+		
+//		JTextField markerDesc = new JTextField();
+//		markerDesc.setBounds(110, 15, 200, 100);
+		
+		labelIncidentNum = new JLabel("<html>Incident<br>Num</html>");
+		labelIncidentNum.setBounds(450, 15, 100,30);
+		incidentNum = new JTextField();
+		incidentNum.setBounds(500, 15, 200, 30);
+		
+		labelIncidentDate = new JLabel("<html>Incident<br>Date</html>");
+		labelIncidentDate.setBounds(450,65, 100,30);
+		incidentDate = new JTextField();
+		incidentDate.setBounds(500, 65, 200, 30);
+		DateFormat dateFormat = new SimpleDateFormat("M/dd/yyyy");
+		Calendar cal = Calendar.getInstance();
+		incidentDate.setText(dateFormat.format(cal.getTime()));
+		
+		labelAnalystName = new JLabel("<html>Analyst<br>Name</html>");
+		labelAnalystName.setBounds(450, 115, 100,30);
+		analystName = new JTextField();
+		analystName.setBounds(500, 115, 200, 30);
+		analystName.setText(OpsUtility.getCommonDetails().getAnalystName());
+		
+		inputFrame.add(markerDesc);
+		inputFrame.add(incidentDate);
+		inputFrame.add(incidentNum);
+		inputFrame.add(analystName);
+		
+		inputFrame.add(labelMarkerDesc);
+		inputFrame.add(labelIncidentDate);
+		inputFrame.add(labelIncidentNum);
+		inputFrame.add(labelAnalystName);
+	}
+	
+	public static void buttonActivity(JFrame frame) {
+		JButton submit = new JButton("SUBMIT");
+		submit.setBounds(500, 180, 100, 25);
+		frame.add(submit);
+		frame.getRootPane().setDefaultButton(submit);
+		submit.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+			}
+		});
+		
+		JButton clear = new JButton("CLEAR");
+		clear.setBounds(620,165,80,25);
+		frame.add(clear);
+		clear.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				markerDesc.setText("");
+				incidentNum.setText("");
+			}
+		});
+	}
+
+}

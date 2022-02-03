@@ -1,0 +1,25 @@
+package TestFile;
+
+import java.io.File;
+import java.io.FilenameFilter;
+import java.util.Arrays;
+import java.util.Comparator;
+
+public class TestFileSorted {
+	public static void main(String[] args) {
+		
+		FilenameFilter filter = new FilenameFilter() {
+	        public boolean accept(File dir, String name) {
+	            return name.matches("access_log.*");
+	        }
+	    };
+		
+		File folder = new File("D:\\BRB\\Documents");
+		File[] files = folder.listFiles();
+		
+		Arrays.sort(files, Comparator.comparingLong(File::lastModified).reversed());
+		for (int i = 0; i < files.length; i++) {
+			System.out.println(files[i]);
+		}
+	}
+}

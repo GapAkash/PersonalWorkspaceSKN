@@ -1,0 +1,49 @@
+package collections;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Iterator;
+import java.util.List;
+
+public class A {
+
+	public static void main(String[] args) {
+
+//		List<Integer> list = new ArrayList<Integer>();
+//
+//		list.add(10);
+//		list.add(0);
+//		list.add(-10);
+//		list.add(50);
+//		list.add(-40);
+//		
+//		for (Iterator<Integer> iterator = list.iterator(); iterator.hasNext();) {
+//			Integer integer = (Integer) iterator.next();
+//			if (integer < 0) {
+//				iterator.remove();
+//			}
+//		}
+//		System.out.println(list);
+		
+		 int[] array = { 1, -3, 4, -9, 3, 4, 70, -10, 0, 7 };
+		 
+		 int[] and = Arrays.stream(array).filter(s -> s >= 0).toArray();
+		 
+		for (int i = 0; i < and.length; i++) {
+			System.out.println(and[i]);
+		}
+		
+	}
+	
+    public String longestCommonPrefix(String[] strs) {
+        
+        String ans = "";
+        
+        for(int i=0; i < strs.length; i++){
+            char ch = strs[i].charAt(i);
+            System.out.println(strs);
+        }
+        return ans;
+    }
+
+}

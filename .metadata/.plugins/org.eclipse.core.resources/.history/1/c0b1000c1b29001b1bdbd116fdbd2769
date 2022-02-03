@@ -1,0 +1,10 @@
+package com.skillnetinc.marker.utility;
+
+public class TestConsoleThread implements Runnable {
+
+	@Override
+	public void run() {
+		InputUtility.testConsole(InputUtility.consoleText);
+	}
+
+}

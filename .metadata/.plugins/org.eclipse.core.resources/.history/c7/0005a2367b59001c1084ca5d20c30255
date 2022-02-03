@@ -1,0 +1,16 @@
+package practice;
+
+public class RandomAc {
+	
+	public static void main(String[] args) {
+		double temp = Math.random() * 100;
+		
+		if (temp > 1 && temp <= 100) {
+			Integer i = (int) temp;
+			System.out.println(i);
+		} else {
+			temp = (int) Math.random();
+		}
+	}
+
+}

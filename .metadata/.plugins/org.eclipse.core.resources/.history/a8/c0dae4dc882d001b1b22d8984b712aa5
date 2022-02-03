@@ -1,0 +1,81 @@
+package com.skillnetinc.marker.utility;
+
+import java.awt.Component;
+import java.io.File;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+import javax.swing.JOptionPane;
+import javax.swing.JTextArea;
+import javax.swing.SwingWorker;
+
+import org.apache.commons.io.FileUtils;
+
+public class OpsUtility {
+
+	public static void consoleOps(JTextArea consoleText) {
+
+		SwingWorker sw = new SwingWorker() {
+
+			@Override
+			protected Object doInBackground() throws Exception {
+				// ConsoleRedirectUtility.redirectOut(consoleText);
+
+				String marker[] = InputUtility.markerDesc.getText().split("\n");
+				
+				StringBuilder alert = new StringBuilder();
+				alert.append("Done");
+				
+				List<String> listMarker = new ArrayList<String>(Arrays.asList(marker));
+				listMarker.removeIf(n -> n.contains("appears to be offline"));
+				marker = new String[listMarker.size()];
+				marker = listMarker.toArray(marker);
+
+				consoleText.append(
+						"Welcome to Marker Deletion Script - \nPlease go through the readMe Tab and contribute in making this script bug free :)\n");
+
+				for (int i = 0; i < marker.length; i++) {
+					String posName = marker[i].split(" ")[0];
+
+					File file = new File("\\\\" + posName + "\\Temp-Tobe-Cleared-Every-1st\\BRB\\test\\environment");
+					consoleText.append("\n" + posName + " - ");
+					File[] files = file.listFiles();
+
+					if (file.canRead()) {
+						consoleText.append("Total Markers: " + files.length);
+						if (files.length>0 && files.length<=5) {
+							consoleText.append(" - Deleting... - ");
+							FileUtils.cleanDirectory(file);
+							consoleText.append("Deleted - ");
+							files = file.listFiles();
+							consoleText.append("Total markers = " + files.length);
+						} else if (files.length==0) {
+							consoleText.append(" - Nothing To Delete !");
+						} else if (files.length>5) {
+							consoleText.append(" - Markers are more than 5. Nothing DELETED - Please review log to find root cause and take action MANUALLY");
+							alert.append("\n"+posName);
+							alert.append(" - Markers are more than 5. Nothing DELETED - Please review log to find root cause and take action MANUALLY");
+						}
+
+					} else {
+						consoleText.append("Not Accessible");
+
+					}
+
+				}
+				consoleText.append("\n\nDone...\nThank You For Using Marker Deletion Script");
+		        JOptionPane.showMessageDialog(null, alert, "InfoBox: " + "lol", JOptionPane.INFORMATION_MESSAGE);
+
+				return consoleText;
+			}
+		};
+		sw.execute();
+
+	}
+
+	public static Component readMeOps() {
+		return null;
+	}
+
+}

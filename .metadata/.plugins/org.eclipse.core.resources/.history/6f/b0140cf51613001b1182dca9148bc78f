@@ -1,0 +1,20 @@
+package com.skillnet.marker.mainApp;
+
+import java.io.File;
+import java.util.Scanner;
+
+public class MainApp {
+	public static void main(String[] args) {
+		System.out.println("Please Copy Paste All The Markers : ");
+		Scanner sc = new Scanner(System.in);
+		
+		while (sc.hasNextLine()) {
+			String posName = sc.nextLine().substring(0,11);
+			
+			File file = new File("\\\\"+posName+"\\C$\\environment\\marker");
+			File[] files = file.listFiles();
+		}
+		
+		sc.close();
+	}
+}

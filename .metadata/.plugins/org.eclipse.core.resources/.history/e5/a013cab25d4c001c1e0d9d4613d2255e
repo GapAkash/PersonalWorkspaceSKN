@@ -1,0 +1,9 @@
+package collections;
+
+public class A extends Thread {
+	
+	public synchronized void m1() throws InterruptedException {
+		Thread.sleep(5000);
+	}
+
+}

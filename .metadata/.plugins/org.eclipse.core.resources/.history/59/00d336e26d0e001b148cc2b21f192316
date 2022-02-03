@@ -1,0 +1,53 @@
+package com.burberry.mnt.mainApp;
+
+import java.io.File;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Arrays;
+import java.util.Calendar;
+import java.util.Comparator;
+import java.util.Scanner;
+
+import com.burberry.mnt.util.UtilConstants;
+
+public class MainApp {
+	
+	static String xstoreLastModifiedName;
+	static String xstoreLastModifiedDate;
+	
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		welcomeMsg();
+		getLastMntProcessedDate();
+	}
+
+	private static void getLastMntProcessedDate() {
+		System.out.println("Finding the last modified NAME and DATE of the folder inside "+UtilConstants.XSTORE_ARCHIVE_DIR);
+		
+		File folder = new File(UtilConstants.XSTORE_ARCHIVE_DIR);
+		File[] files = folder.listFiles();
+		Arrays.sort(files, Comparator.comparingLong(File::lastModified).reversed());
+		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+		
+		xstoreLastModifiedName = files[0].getName();
+		xstoreLastModifiedDate = sdf.format(files[0].lastModified());
+		System.out.println("NAME - "+xstoreLastModifiedName);
+		System.out.println("DATE - "+xstoreLastModifiedDate);
+		
+		String dateMaker [] = xstoreLastModifiedName.split("_");
+		System.out.println(dateMaker[0]);
+		SimpleDateFormat df = new SimpleDateFormat("yyyyMMdd");
+		Calendar cal = Calendar.getInstance();
+		try {
+			cal.setTime(df.parse(dateMaker[0]));
+			cal.add(java.util.Calendar.DAY_OF_MONTH, -1);
+		    System.out.println("lol "+cal.getTime().getDay());
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
+	}
+
+	private static void welcomeMsg() {
+		
+	}
+}

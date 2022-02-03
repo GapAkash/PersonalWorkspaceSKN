@@ -1,0 +1,6 @@
+str = String
+int = Integer
+float = float
+bool = boolean
+len = to determine length of the given variable
+sorted = to sort the given variable (ex - From highest number to lowest)

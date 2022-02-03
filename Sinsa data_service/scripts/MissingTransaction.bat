@@ -1,0 +1,1 @@
+java -Dlogfile.name=MissingTransaction -classpath .;./data_service.jar;./resources;./config com.skillnet.dataservice.ProcessorController com.skillnet.dataservice.transaction.MissingTransactionProcessor

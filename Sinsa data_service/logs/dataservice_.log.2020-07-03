@@ -1,0 +1,6 @@
+[ERROR] 2020-07-03 12:51:45 DBConn:41 createConnection - java.lang.NullPointerException
+[ERROR] 2020-07-03 12:52:49 DBConn:41 createConnection - error
+java.lang.NullPointerException
+	at com.skillnet.util.sql.DBConn.createConnection(DBConn.java:34)
+	at com.skillnet.Test.main(Test.java:12)
+[INFO] 2020-07-03 12:53:45 DBConn:34 createConnection - Trying to connect to URL jdbc:oracle:thin:@//127.0.0.1:1521/xe:dtv

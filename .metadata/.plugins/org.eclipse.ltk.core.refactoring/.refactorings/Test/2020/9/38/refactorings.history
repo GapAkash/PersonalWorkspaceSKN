@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename local variable &apos;comments&apos; in &apos;mainApp.TestMerge.main(...)&apos; to &apos;marker&apos;&#x0D;&#x0A;- Original project: &apos;Test&apos;&#x0D;&#x0A;- Original element: &apos;mainApp.TestMerge.main(String[]).comments&apos;&#x0D;&#x0A;- Renamed element: &apos;comments&apos;&#x0D;&#x0A;- Update references to refactored element" description="Rename local variable &apos;comments&apos;" id="org.eclipse.jdt.ui.rename.local.variable" input="/src&lt;mainApp{TestMerge.java[TestMerge~main~\[QString;@comments!232!271!239!246!\[QString;!0!false" name="marker" references="true" stamp="1600447507585" version="1.0"/>
+</session>

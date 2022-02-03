@@ -1,0 +1,27 @@
+package collections;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Iterator;
+import java.util.List;
+
+public class A {
+
+	public static void main(String[] args) {
+		String[] strs = {"flower","flow","flight"};
+		
+		System.out.println(longestCommonPrefix(strs));
+	}
+	
+    public String longestCommonPrefix(String[] strs) {
+        
+        String ans = "";
+        
+        for(int i=0; i < strs.length; i++){
+            char ch = strs[i].charAt(i);
+            System.out.println(ch);
+        }
+        return ans;
+    }
+
+}

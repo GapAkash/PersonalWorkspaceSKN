@@ -1,0 +1,21 @@
+package wissen;
+
+import java.util.HashSet;
+import java.util.Set;
+
+public class Arr {
+	
+	public static void main(String[] args) {
+		int[] arr = {1, 2, 3, 4, 5, 3, 4, 1};
+		
+		Set<Integer> set = new HashSet<Integer>();
+		
+		for (Integer integer : arr) {
+			if (set.add(integer)==false) {
+				System.out.println(integer);
+			}
+		}
+		
+	}
+
+}

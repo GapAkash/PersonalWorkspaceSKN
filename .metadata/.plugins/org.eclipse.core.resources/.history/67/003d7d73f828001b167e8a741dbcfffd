@@ -1,0 +1,86 @@
+package com.skillnetinc.marker.utility;
+
+import java.awt.Color;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.File;
+
+import javax.swing.BorderFactory;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
+import javax.swing.SwingWorker;
+
+public class InputUtility {
+
+	public static JFrame tableFrame;
+	public static JTextArea markerDesc, consoleText;
+	public static JLabel labelMarkerDesc;
+
+	public static void showUserInputFields(JFrame inputFrame) {
+		labelMarkerDesc = new JLabel("<html>Marker<br>Description</html>");
+		labelMarkerDesc.setBounds(50, 115, 100, 30);
+		markerDesc = new JTextArea(10, 20);
+		markerDesc.setBounds(150, 15, 300, 230);
+		markerDesc.setBorder(BorderFactory.createLineBorder(Color.gray));
+
+		inputFrame.add(markerDesc);
+		inputFrame.add(labelMarkerDesc);
+	}
+
+	public static void buttonActivity(JFrame inputFrame) {
+		JButton submit = new JButton("SUBMIT");
+		submit.setBounds(520, 50, 150, 40);
+		submit.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				consoleText = new JTextArea();
+				consoleText.setEditable(false);
+				consoleText.setVisible(true);
+				JScrollPane sp = new JScrollPane(consoleText);
+
+				tableFrame = new JFrame("Script Result");
+				tableFrame.add(sp);
+				tableFrame.setSize(800, 300);
+				tableFrame.setVisible(true);
+				tableFrame.setLocationRelativeTo(null);
+
+				testConsole(consoleText);
+
+			}
+
+		});
+		inputFrame.add(submit);
+	}
+
+	public static void testConsole(JTextArea consoleText) {
+
+		SwingWorker sw = new SwingWorker() {
+
+			@Override
+			protected Object doInBackground() throws Exception {
+				String marker[] = InputUtility.markerDesc.getText().split("\n");
+				for (int i = 0; i < marker.length; i++) {
+					String posName = marker[i].split(" ")[0];
+
+					File file = new File("\\\\" + posName + "\\C$\\environment\\marker");
+					consoleText.append("\nChecking for marker inside " + file);
+					System.out.println("\nChecking for marker inside " + file);
+
+					File[] files = file.listFiles();
+					if (file.canRead()) {
+						consoleText.append("Found Total " + files.length + " markers inside " + file);
+						System.out.println("Found Total " + files.length + " markers inside " + file);
+					}
+
+				}
+				return consoleText;
+			}
+		};
+		sw.execute();
+
+	}
+
+}

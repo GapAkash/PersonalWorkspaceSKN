@@ -1,0 +1,1 @@
+java -Dlogfile.name=Test -classpath .;./data_service.jar;./resources;./config com.skillnet.test.Test

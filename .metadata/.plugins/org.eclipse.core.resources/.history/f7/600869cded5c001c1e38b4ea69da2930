@@ -1,0 +1,14 @@
+package practice;
+
+public class Div {
+	
+	public static void main(String[] args) {
+		
+		int[] arr = {1, 5, 4, 3, 7, 6, 12};
+		int op = 10;
+		
+	}
+	
+	
+
+}

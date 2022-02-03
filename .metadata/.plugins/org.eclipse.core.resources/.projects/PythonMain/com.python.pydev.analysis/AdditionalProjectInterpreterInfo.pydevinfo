@@ -1,0 +1,18 @@
+-- VERSION_5
+-- START DISKCACHE_2
+D:\Personal Workspace\.metadata\.plugins\org.eclipse.core.resources\.projects\PythonMain\com.python.pydev.analysis\v2_indexcache
+AssignmentPackage.__init__|1593764781904517000|D:\Personal Workspace\PythonMain\AssignmentPackage\__init__.py
+AssignmentPackage.BasicFunction|1593766785607157000|D:\Personal Workspace\PythonMain\AssignmentPackage\BasicFunction.py
+-- END DISKCACHE
+-- START DICTIONARY
+2
+1=D:\Personal Workspace\PythonMain\AssignmentPackage\BasicFunction.py
+2=AssignmentPackage.BasicFunction
+-- END DICTIONARY
+-- START TREE 1
+1
+bas|1|basic_function!1^8#5*18@
+-- END TREE
+-- START TREE 2
+0
+-- END TREE

@@ -1,0 +1,78 @@
+package mainApp;
+
+import java.util.*;
+public class test {
+	public static void main(String[] args) {
+		
+		System.out.println("Last Message - Wo to hmesa rhega\nTime - 1:28AM");
+	}
+
+	private static Set<String> gettest2() {
+		String sentence = "Hector RON Tom Dan";
+		String[] arr1 = {"Joe", "Tom", "Dan", "Bill", "Hector", "Ron"};
+		//String arr1[] = sentence.split(" ");
+		String[] arr2 = {"Joe", "Hector", "Ron"};
+		Set<String> hash = new HashSet<String>();
+			for (int i = 0; i < arr1.length; i++) {
+				for (int j = 0; j < arr2.length; j++) {
+					if (arr1[i] == arr2[j]) {
+						// System.out.println(Arrays.toString(arr1).toLowerCase());
+						System.out.println(arr2[j] + " sout ");
+						// break;
+						hash.add(arr1[i]);
+					}
+			}
+		}
+		return hash;		
+	}
+
+	private static void getTest1() {
+		String[] AllUids = {"Joe", "Tom", "Dan", "Bill", "Hector", "Ron"};
+		String[] EndUids = {"Joe", "Hector", "Ron"};
+		
+		
+		for (int i = 0; i < AllUids.length; i++) {
+			for (int j = 0; j < EndUids.length; j++) {
+				if(AllUids!=EndUids) {
+					//System.out.println("utuc"+AllUids[i]);
+				}
+			}
+		}
+		
+		
+		
+	}
+
+	private static ArrayList<String> getTest() {
+		String sentence = "html sql abcd ai";
+		String[] title = sentence.split(" ");
+		String[] colllection = {"html", "sql"};
+		
+		//System.out.println("1654156"+Arrays.asList(colllection).removeAll(Arrays.asList(title)));
+		
+		ArrayList<String> hasTag = new ArrayList<String>();
+		for (int i = 0; i < colllection.length; i++) {
+			for (String word : title) {
+				if (Arrays.asList(title).contains(colllection[i])) {
+					hasTag.add(word);
+				}
+			}
+		}
+		return hasTag;
+		
+		
+		
+	}
+
+	public static String getMessage() {
+		String sentence = "html sql abcd sql";
+		StringBuilder builder=new StringBuilder();
+		String[] words = sentence.split(" ");
+		for (String word : words) {
+			if (word.equalsIgnoreCase("HTML") || word.equalsIgnoreCase("SQL")) {
+				builder.append("#").append(word).append(" ");
+			}
+		}
+		return builder.toString();
+	}
+}

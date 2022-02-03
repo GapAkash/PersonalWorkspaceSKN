@@ -1,0 +1,10 @@
+package collections;
+
+public class A implements Runnable {
+	
+	public synchronized void m1() throws InterruptedException {
+		System.out.println("AKASH");
+		Thread.sleep(5000);
+	}
+
+}

@@ -1,0 +1,68 @@
+MarkerUtility-v2.5[Stable]
+	Release Note:
+		1. Updated Analysts Name.
+		2. Added new column in Tab 1 to match with sheet.
+	
+-------------------------------------------------------------------------------------------------------------------------------------
+
+MarkerUtility-v2.4[Stable]
+	Release Note:
+		1. Updated Analysts Name.
+	
+-------------------------------------------------------------------------------------------------------------------------------------
+
+MarkerUtility-v2.3[Stable]
+	Bug Fix:
+		1. Fixed bug for all the text boxes (except Marker Description) in which custom value was not populating in the result sheet.
+
+-------------------------------------------------------------------------------------------------------------------------------------
+
+MarkerUtility-v2.2[Stable]
+	Release Note:
+		1. Disabled 2nd sheet as per the requirement for updating new sheet.
+
+-------------------------------------------------------------------------------------------------------------------------------------
+
+MarkerUtility-v2.1[Stable]
+	Bug Fix:
+		1. Fixed bug in 2nd sheet where same till having 2 different marker line creating two different row instead on one row.
+-------------------------------------------------------------------------------------------------------------------------------------
+
+MarkerUtility-v2.0[Stable]
+	Release Note:
+		1. First Stable Release 
+		2. Every functions are now working :)
+		3. Almost all the Bugs has been fixed (still you might encounter with a bug, please report it if you encounter with any)
+-------------------------------------------------------------------------------------------------------------------------------------
+
+MarkerUtility-v1.0[Beta]
+	Release Note:
+		1. First Beta Release 
+		2. Every functions are now working :)
+		3. Since this is a first Beta release with every function enabled so there might be some bug so please cross verify (only 1st tab) whether it is populating everything right or not.
+		4. "Comments" and "Description" is printing at a same line.
+		5. No bug found while testing but you can expect it.
+-------------------------------------------------------------------------------------------------------------------------------------
+
+MarkerUtility-v0.4[Alpha]
+	Bug Fix:
+		1. Fixed bug for BUSINESS_DATE_CHANGED marker which was wrongly populating "EMEIA" as REGION
+		2. Fixed bug where it was populating COUNTRY name as UK for United Kingdom
+-------------------------------------------------------------------------------------------------------------------------------------
+
+MarkerUtility-v0.3[Alpha]
+	Bug Fix:
+		1. Fixed bug where REGION name was blank for MACAO
+-------------------------------------------------------------------------------------------------------------------------------------
+
+MarkerUtility-v0.2[Alpha]
+	Bug Fix:
+		1. Fixed bug where occasionally populating wrong REGION name
+-------------------------------------------------------------------------------------------------------------------------------------
+
+MarkerUtility-v0.1[Alpha]
+	Release Note:
+		1. First Alpha Release For Everyone to test and report bugs
+		2. As of now main tab (Month_2020) is disabled because I'm still working on it :)
+		3. No need to enter anything in "Analyst Name" column as it is meant for main tab which is disabled as of now
+-------------------------------------------------------------------------------------------------------------------------------------

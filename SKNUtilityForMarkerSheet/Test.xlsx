@@ -1,0 +1,8 @@
+REGION	COUNTRY	STORE#	TILL#	DATE	DESCRIPTION	
+Asia Pacific	CHINA	9088	002 	10/06/2020	CNM9088R002    startup.err	
+Asia Pacific	CHINA	9384	002 	10/06/2020	CNM9384R002    check-and-download-updates.err	
+Asia Pacific	CHINA	9384	002 	10/06/2020	CNM9384R002    close.err	
+Asia Pacific	CHINA	9384	002 	10/06/2020	CNM9384R002    BUSINESS_DATE_CHANGED.resume	
+Asia Pacific	CHINA	9030	001 	10/06/2020	CNM9030R001    appears to be offline	
+Asia Pacific	CHINA	9109	002 	10/06/2020	CNM9109R002    appears to be offline	
+Asia Pacific	CHINA	9384	002 	10/06/2020	CNM9384R002    toggle-training-datasource-offline.DATABASE_BACKUP.BUSINESS_DATE_CHANGED	
